@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Entrar — CitaRN{% endblock %}
+{% block content %}
+<div class="auth-page">
+  <aside class="auth-aside">
+    <div class="auth-quote">
+      <blockquote>Uma boa referência não é detalhe editorial. É o caminho de volta à evidência.</blockquote>
+      <p>Organize seu trabalho sem perder a rastreabilidade das fontes.</p>
+    </div>
+  </aside>
+  <section class="auth-main">
+    <div class="auth-box">
+      <p class="eyebrow">Bem-vindo de volta</p>
+      <h1>Entre na sua conta</h1>
+      <p>Acesse seus projetos e continue exatamente de onde parou.</p>
+      {% if form.non_field_errors %}<div class="form-errors">{{ form.non_field_errors }}</div>{% endif %}
+      <form method="post">
+        {% csrf_token %}
+        {% if next %}<input type="hidden" name="next" value="{{ next }}">{% endif %}
+        <div class="field">
+          <label for="{{ form.username.id_for_label }}">Usuário</label>
+          {{ form.username }}{{ form.username.errors }}
+        </div>
+        <div class="field">
+          <label for="{{ form.password.id_for_label }}">Senha</label>
+          {{ form.password }}{{ form.password.errors }}
+        </div>
+        <button class="button button-primary" type="submit">Entrar</button>
+      </form>
+      <p class="auth-switch">Ainda não tem conta? <a href="{% url 'register' %}">Crie agora</a></p>
+    </div>
+  </section>
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Criar conta — CitaRN{% endblock %}
+{% block content %}
+<div class="auth-page">
+  <aside class="auth-aside">
+    <div class="auth-quote">
+      <blockquote>Sua biblioteca cresce a cada trabalho — e permanece organizada para o próximo.</blockquote>
+      <p>Conta individual, múltiplos projetos e reaproveitamento das referências já revisadas.</p>
+    </div>
+  </aside>
+  <section class="auth-main">
+    <div class="auth-box">
+      <p class="eyebrow">Primeiro acesso</p>
+      <h1>Crie sua conta</h1>
+      <p>Leva menos de um minuto. Seus dados ficam separados dos demais usuários.</p>
+      {% if form.non_field_errors %}<div class="form-errors">{{ form.non_field_errors }}</div>{% endif %}
+      <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+          <div class="field">
+            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+            {{ field }}{{ field.errors }}
+            {% if field.help_text %}<span class="helptext">{{ field.help_text|safe }}</span>{% endif %}
+          </div>
+        {% endfor %}
+        <button class="button button-primary" type="submit">Criar minha conta</button>
+      </form>
+      <p class="auth-switch">Já possui conta? <a href="{% url 'login' %}">Entrar</a></p>
+    </div>
+  </section>
+</div>
+{% endblock %}
