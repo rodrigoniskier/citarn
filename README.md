@@ -12,7 +12,7 @@ Gerenciador web de referências acadêmicas construído em Django. Cada usuário
 
 **Tecnologias.** Python, Django, SQLite, Crossref API, GitHub Actions.
 
-**Qualidade e evidências.** 13 funções de teste automatizadas; verificação contínua no GitHub Actions.
+**Qualidade e evidências.** 13 funções de teste automatizadas; verificação contínua no GitHub Actions. Licença MIT.
 
 ## O que já está implementado
 
