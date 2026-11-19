@@ -2,6 +2,18 @@
 
 Gerenciador web de referências acadêmicas construído em Django. Cada usuário possui uma biblioteca privada, pode criar vários projetos, importar fontes em PDF, DOCX, PPTX ou por URL/DOI, revisar os metadados e gerar listas em diferentes estilos bibliográficos.
 
+## Problema, público e resultado
+
+**Problema.** Organizar as referências de um trabalho acadêmico e formatá-las em estilos diferentes consome tempo e gera erros.
+
+**Para quem.** Estudantes e pesquisadores que escrevem trabalhos com referências em ABNT, APA, Vancouver e outros estilos.
+
+**O que entrega.** Biblioteca privada por usuário, vários projetos, importação de PDF, DOCX, PPTX, URL e DOI (com Crossref), detecção de duplicatas, revisão manual dos metadados e exportação em DOCX, PDF e TXT.
+
+**Tecnologias.** Python, Django, SQLite, Crossref API, GitHub Actions.
+
+**Qualidade e evidências.** 13 funções de teste automatizadas; verificação contínua no GitHub Actions.
+
 ## O que já está implementado
 
 - cadastro, login e separação integral dos dados por usuário;
